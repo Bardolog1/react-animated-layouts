@@ -1,0 +1,1 @@
+Este es un preambulo  a un proyecto de un componente o libreria reusable para subir a npm compatible en react para crear componentes en forma de olas o waves customizables en colores estilos, frecuencia y amplitud de las ondas y generar composiciones animadas
