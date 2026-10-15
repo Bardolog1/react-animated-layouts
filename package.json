@@ -1,0 +1,30 @@
+{
+  "name": "react-waves-layout",
+  "version": "0.1.0",
+  "description": "Customizable animated SVG waves for React.",
+  "license": "MIT",
+  "author": "Libardo Lozano",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["react", "waves", "svg", "animation", "layout"],
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.6.0"
+  }
+}
