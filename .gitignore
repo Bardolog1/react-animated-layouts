@@ -26,3 +26,5 @@ target/
 .idea/
 .DS_Store
 Thumbs.db
+
+storybook-static/

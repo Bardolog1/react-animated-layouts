@@ -1,18 +1,28 @@
-# react-waves-layout
+# react-animated-layouts
 
-Animated SVG waves for React. No runtime dependencies; the animation is plain CSS.
+Animated, customizable layout components for React. No runtime dependencies; animations are plain CSS and respect `prefers-reduced-motion`.
 
 ```sh
-npm install react-waves-layout
+npm install react-animated-layouts
 ```
 
 ```jsx
-import { Waves } from 'react-waves-layout';
+import { Waves, Aurora, Gradient } from 'react-animated-layouts';
 
-<Waves colors={['#38bdf8', '#0ea5e9', '#0369a1']} height={200} amplitude={24} frequency={2} speed={1.2} />
+<Waves colors={['#38bdf8', '#0ea5e9', '#0369a1']} height={200} amplitude={24} frequency={2} />
+
+<Aurora height={400}>
+  <h1>Hello</h1>
+</Aurora>
+
+<Gradient colors={['#f97316', '#ec4899', '#6366f1']} angle={135} />
 ```
 
-## Props
+Run `npm run storybook` to try every component with live controls.
+
+## Waves
+
+Stacked SVG waves.
 
 | Prop        | Default                           | Description                                          |
 | ----------- | --------------------------------- | ---------------------------------------------------- |
@@ -28,7 +38,32 @@ import { Waves } from 'react-waves-layout';
 | `className` |                                   | Class for the root `svg`                             |
 | `style`     |                                   | Inline style merged into the root `svg`              |
 
-Animation stops when the user prefers reduced motion.
+## Aurora
+
+Blurred, drifting color blobs. Renders `children` above the effect.
+
+| Prop         | Default                          | Description                                  |
+| ------------ | -------------------------------- | -------------------------------------------- |
+| `colors`     | `['#22d3ee','#a78bfa','#f472b6']` | Blob colors, cycled                         |
+| `height`     | `320`                            | Number (px) or any CSS length                |
+| `blobs`      | `5`                              | Number of blobs                              |
+| `blur`       | `60`                             | Blur radius in px                            |
+| `speed`      | `1`                              | Animation speed; negative reverses, `0` stops |
+| `opacity`    | `0.7`                            | Blob opacity                                 |
+| `background` | `'#0b1020'`                      | Base color behind the blobs                  |
+| `className`, `style`, `children` |              | Applied to the root `div`                    |
+
+## Gradient
+
+Shifting linear gradient. Renders `children` inside.
+
+| Prop     | Default                           | Description                                   |
+| -------- | --------------------------------- | --------------------------------------------- |
+| `colors` | `['#f97316','#ec4899','#6366f1']` | Gradient stops; the first color closes the loop |
+| `angle`  | `135`                             | Gradient angle in degrees                     |
+| `height` | `320`                             | Number (px) or any CSS length                 |
+| `speed`  | `1`                               | Animation speed; negative reverses, `0` stops |
+| `className`, `style`, `children` |                   | Applied to the root `div`                     |
 
 ## License
 
