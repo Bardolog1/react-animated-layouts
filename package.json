@@ -20,6 +20,9 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
+    "site:dev": "vite site",
+    "site:build": "vite build site",
+    "site:preview": "vite preview site",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o storybook-static"
   },
@@ -30,10 +33,14 @@
     "svg",
     "waves",
     "aurora",
-    "gradient"
+    "gradient",
+    "blob",
+    "particles",
+    "contours",
+    "dunes"
   ],
   "peerDependencies": {
-    "react": ">=17"
+    "react": ">=18"
   },
   "devDependencies": {
     "@storybook/react-vite": "^10.6.2",

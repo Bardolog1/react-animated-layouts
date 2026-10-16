@@ -1,4 +1,5 @@
 import { useMemo, type CSSProperties } from 'react';
+import { createRandom } from '../shared/random.js';
 
 export interface WavesProps {
   colors?: string[];
@@ -10,6 +11,7 @@ export interface WavesProps {
   layers?: number;
   opacity?: number;
   flip?: boolean;
+  seed?: number;
   className?: string;
   style?: CSSProperties;
 }
@@ -37,17 +39,19 @@ export function Waves({
   layers = 3,
   opacity = 0.6,
   flip = false,
+  seed,
   className,
   style,
 }: WavesProps) {
-  const count = Math.max(1, Math.round(layers));
+  const count = Math.min(12, Math.max(1, Math.round(layers)));
   const crests = Math.max(1, Math.round(frequency));
   const paths = useMemo(() => {
     const usable = Math.max(0, height - amplitude * 2);
+    const rng = seed === undefined ? null : createRandom(seed);
     return Array.from({ length: count }, (_, i) =>
-      wavePath(amplitude + (usable * i * 0.6) / count, amplitude, crests, i * 1.3, height),
+      wavePath(amplitude + (usable * i * 0.6) / count, amplitude, crests, rng ? rng.range(0, Math.PI * 2) : i * 1.3, height),
     );
-  }, [count, crests, amplitude, height]);
+  }, [count, crests, amplitude, height, seed]);
 
   return (
     <svg
@@ -63,7 +67,7 @@ export function Waves({
           key={i}
           className="wl-layer"
           d={d}
-          fill={colors[i % colors.length]}
+          fill={colors.length ? colors[i % colors.length] : '#38bdf8'}
           fillOpacity={opacity}
           style={{
             animation: speed
