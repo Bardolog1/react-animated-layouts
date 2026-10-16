@@ -1,22 +1,60 @@
 # react-animated-layouts
 
-Animated, customizable layout components for React. No runtime dependencies. Every component is SSR-safe, respects `prefers-reduced-motion` (a static frame is rendered), cleans up its listeners and frame loops on unmount, and pauses canvas/JS animation while off-screen.
+[![npm version](https://img.shields.io/npm/v/react-animated-layouts?color=f472b6&labelColor=12091a)](https://www.npmjs.com/package/react-animated-layouts)
+[![license](https://img.shields.io/npm/l/react-animated-layouts?color=f472b6&labelColor=12091a)](LICENSE)
+[![live demos](https://img.shields.io/badge/demos-live-f472b6?labelColor=12091a)](https://bardolog1.github.io/react-animated-layouts/)
+
+Animated, customizable layout components for React. Seven components draw moving backgrounds behind your content, with no runtime dependencies.
+
+**[npm package](https://www.npmjs.com/package/react-animated-layouts)** · **[Live demos](https://bardolog1.github.io/react-animated-layouts/)** · **[Release notes](https://github.com/Bardolog1/react-animated-layouts/releases)**
+
+[![Particles background from the demo site](https://raw.githubusercontent.com/Bardolog1/react-animated-layouts/main/assets/preview.png)](https://bardolog1.github.io/react-animated-layouts/)
+
+## Install
 
 ```sh
 npm install react-animated-layouts
 ```
 
-```jsx
-import { Waves, Aurora, Gradient, Blob, Particles, Contours, Dunes } from 'react-animated-layouts';
+React 18 or newer is required as a peer dependency.
 
-<Waves colors={['#38bdf8', '#0ea5e9', '#0369a1']} height={200} amplitude={24} frequency={2} />
+## Quick start
+
+```jsx
+import { Waves, Aurora, Particles } from 'react-animated-layouts';
+
+<Waves colors={['#f472b6', '#c026d3', '#7c3aed']} height={200} amplitude={24} frequency={2} />
 
 <Aurora height={420}>
   <h1>Hello</h1>
 </Aurora>
+
+<Particles shape="square" colors={['#f472b6', '#fb7185']} background="#12091a" height={360} />
 ```
 
-Run `npm run storybook` to try every component with live controls.
+Every example on the demo site has controls for each prop and a copy button that gives you the exact JSX for the current settings.
+
+## Components
+
+| Component   | What it draws                                                       | Demo                                                                     |
+| ----------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `Waves`     | Stacked SVG waves for dividers and footer edges                     | [Open](https://bardolog1.github.io/react-animated-layouts/#waves)         |
+| `Aurora`    | Luminous curtain ribbons with glow, rays and stars                  | [Open](https://bardolog1.github.io/react-animated-layouts/#aurora)        |
+| `Gradient`  | Linear, radial, conic or mesh gradient with optional grain          | [Open](https://bardolog1.github.io/react-animated-layouts/#gradient)      |
+| `Blob`      | Morphing organic shapes                                             | [Open](https://bardolog1.github.io/react-animated-layouts/#blob)          |
+| `Particles` | Floating particles with connecting lines and pointer interaction    | [Open](https://bardolog1.github.io/react-animated-layouts/#particles)     |
+| `Contours`  | Flowing topographic contour lines                                   | [Open](https://bardolog1.github.io/react-animated-layouts/#contours)      |
+| `Dunes`     | Parallax dunes or mountains with sky, sun and fog                   | [Open](https://bardolog1.github.io/react-animated-layouts/#dunes)         |
+
+## Features
+
+- No runtime dependencies.
+- SSR-safe, and safe to import from Node ESM.
+- Honors `prefers-reduced-motion`: a static frame is rendered.
+- Cleans up listeners and frame loops on unmount, and pauses canvas and script-driven animation while off-screen.
+- Deterministic output with `seed`.
+
+To explore the components locally with live controls, run `npm run storybook`.
 
 ## Conventions
 
@@ -210,6 +248,13 @@ Layered silhouettes with parallax drift. Layers tile seamlessly, and nearer laye
 | `height`      | `360`                                            | Number (px) or any CSS length                                |
 | `width`       | `'100%'`                                         | Number (px) or any CSS length                                |
 | `className`, `style`, `children` |                               | Applied to the root `div`                                    |
+
+## Links
+
+- npm: https://www.npmjs.com/package/react-animated-layouts
+- Live demos: https://bardolog1.github.io/react-animated-layouts/
+- Source: https://github.com/Bardolog1/react-animated-layouts
+- Issues: https://github.com/Bardolog1/react-animated-layouts/issues
 
 ## License
 
