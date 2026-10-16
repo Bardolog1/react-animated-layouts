@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>react-animated-layouts</title>
+    <meta
+      name="description"
+      content="Seven animated layout components for React: Waves, Aurora, Gradient, Blob, Particles, Contours and Dunes. Tune each one live and copy the JSX."
+    />
+    <meta name="theme-color" content="#0b1015" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="react-animated-layouts" />
+    <meta
+      property="og:description"
+      content="Seven animated layout components for React. No runtime dependencies, SSR-safe, reduced-motion aware. Tune each one live and copy the JSX."
+    />
+    <meta name="twitter:card" content="summary" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1015'/%3E%3Cpath d='M3 20c4-6 8-6 12 0s8 6 14 0v9H3z' fill='%23ff7a4d'/%3E%3Cpath d='M3 13c4-6 8-6 12 0s8 6 14 0' fill='none' stroke='%235eead4' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400..600&family=Spline+Sans+Mono:wght@400&display=swap"
+    />
+    <script>
+      (function () {
+        var t = 'dark';
+        try {
+          var s = localStorage.getItem('ral-theme');
+          if (s === 'light' || s === 'dark') t = s;
+          else if (window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
+        } catch (e) {
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>The live demos need JavaScript. Install with npm install react-animated-layouts.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
